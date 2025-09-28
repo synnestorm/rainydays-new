@@ -7,7 +7,7 @@
     margin-right: auto;
     width: 800px;
     height: 500px;
-    background-color: #c1cfd3;
+    background-color: var(--border-color);
     border-radius: 10%;
 }
 
@@ -20,22 +20,22 @@ main .fa-bag-shopping {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    color:#356b79;
+    color: var(--text-color-three);
     padding-bottom: 50px;
 }
 
 .continue-btn {
     padding: 10px;
-    background-color: #0a3641;
+    background-color: var(--text-color-three);
     text-align: center;
-    color: white;
+    color: var(--bg-color);
     text-decoration: none;
     margin-left: 317px;
 }
 
 .continue-btn:hover {
-    background-color: white;
-    color:#0a3641;
+    background-color: var(--bg-color);
+    color: var(--text-color-three);
 }
 
 .logo-bottom-two {

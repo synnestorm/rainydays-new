@@ -41,7 +41,7 @@ h3 {
     background: linear-gradient(#565A60, #4B71AC);
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: "Instrument Sans", Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-one), Verdana, Geneva, Tahoma, sans-serif;
     padding-bottom: 15px;
 }
 
@@ -85,7 +85,7 @@ h3 {
 footer h4 {
     text-align: center;
     text-transform: uppercase;
-    color:#0a3641;
+    color: var(--text-color-three);
     font-size: larger;
 }
 

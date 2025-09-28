@@ -1,7 +1,7 @@
 /** Stylesheet for checkout.html page **/
 
 .checkout-form {
-    background-color: #c1cfd3;
+    background-color: var(--border-color);
     padding: 30px;
     margin: auto;
     padding-bottom: 40px;
@@ -12,23 +12,23 @@
     text-align: center;
     font-weight: bold;
     font-size: 20px;
-    color:#0a3641;
+    color: var(--text-color-three);
 }
 
 .checkout-btn {
     display: block;
     padding: 10px;
-    background-color: #0a3641;
+    background-color: var(--text-color-three);
     text-align: center;
-    color: white;
+    color: var(--bg-color);
     text-decoration: none;
     font-weight: bold;
     text-align: center;
 }
 
 .checkout-btn:hover {
-    background-color: white;
-    color: #0a3641;
+    background-color: var(--bg-color);
+    color: var(--text-color-three);
     font-weight: bold;
 }
 

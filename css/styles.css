@@ -14,6 +14,7 @@
 
 /** The main styles for all the html pages; the header, navbar, footer and some
 headlines. This also includes the styles for index page **/
+
 * {
     box-sizing: border-box;
 }

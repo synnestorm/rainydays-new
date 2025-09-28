@@ -34,21 +34,21 @@ jacketfour.html, jacketfive.html, jacketsix.html and jacketseven.html **/
 .price {
    font-weight: bold;
    font-size: 35px;
-   color: #0a3641; 
+   color: var(--text-color-three); 
 }
 
 .add-btn {
     font-size: 15px;
-    background-color: #0a3641;
+    background-color: var(--text-color-three);
     text-decoration: none;
-    color: white;
+    color: var(--bg-color);
     padding: 5px;
     border-radius: 3px;
 }
 
 .add-btn:hover {
-    background-color: white;
-    color: #0a3641;
+    background-color: var(--bg-color);
+    color: var(--text-color-three);
 }
 
 .size {

@@ -8,7 +8,7 @@ h1 {
     background: linear-gradient(#565A60, #4B71AC);
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: "Instrument Sans", Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-one), Verdana, Geneva, Tahoma, sans-serif;
     padding-top: 15px;
     text-align: center;
 }
@@ -26,7 +26,7 @@ h1 {
 }
 
 .contact-form {
-    background-color: #ECECEC;
+    background-color: var(--border-color);
     padding: 30px;
     margin: auto;
 }
@@ -36,7 +36,7 @@ textarea {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #A19EA1;
+    border: none;
 }
 
 textarea:hover {
@@ -44,25 +44,26 @@ textarea:hover {
 }
 
 button[type="submit"] {
-    background-color: #0a3641;
+    background-color: var(--text-color-three);
     width: 300px;
     display: block;
     font-weight: bold;
-    font-family: "Instrument Sans", Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font-one), Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     font-size: 18px;
-    color: #ffffff;
+    color: var(--bg-color);
     margin-top: 10px;
     padding: 10px;
     margin: auto;
     margin-top: 10px;
     text-align: center;
     cursor: pointer;
+    border: none;
 }
 
 button[type="submit"]:hover {
-    background-color: #ffffff;
-    color: #0a3641;
+    background-color: var(--bg-color);
+    color: var(--text-color-three);
     text-decoration: none;
 }
 
@@ -78,7 +79,7 @@ button[type="submit"]:hover {
 /** Log in **/
 
 .login-form {
-    background-color: #ececec;
+    background-color: var(--border-color);
     padding: 30px;
     margin: auto;
     padding-bottom: 40px;
@@ -95,7 +96,7 @@ button[type="submit"]:hover {
     padding-bottom: 80px;
     border: 1px transparent;
     margin-bottom: 100px;
-    background-color: #ECECEC;
+    background-color: var(--border-color);
     border-radius: 10px;
 
 }
