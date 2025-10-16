@@ -1,7 +1,7 @@
 const options = {
   headers: {
-    Authorization: `Bearer ${eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3lubmVzdG9ybSIsImVtYWlsIjoic3luc3RvMDQxMTZAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3NjA2Mzk4MzV9.ZA4kVTLgWITqte46sk01bHxwGLrzsA8zkP5TlHzULUU}`, // my short-lived token; this will need to be updated
-    "ddc32717-7e81-4b7d-8d17-b297cf026e79": apiKey.data.key, // my long-lived API key
+    Authorization: `Bearer ${eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3lubmVzdG9ybSIsImVtYWlsIjoic3luc3RvMDQxMTZAc3R1ZC5ub3JvZmYubm8iLCJpYXQiOjE3NjA2NDIyODZ9.KOqvvVx5dORKTu_CjmYZ5xMZEzJ4JGy1H5kFxssSANY}`, // my short-lived token; this will need to be updated
+    "3a404182-2ca7-44dd-8445-61b7b878840f": apiKey.data.key, // my long-lived API key
   },
 };
 
