@@ -1,0 +1,1 @@
+// for the induvidual jacket pages; displaying details about jackets
