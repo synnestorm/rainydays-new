@@ -1,5 +1,15 @@
 /** The styles for jackets.html **/
 
+.jackets-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 div img {
     max-width: 100%;
     width: 700px;
@@ -18,6 +28,7 @@ div img:hover {
     gap: 50px;
     justify-content: center;
     padding: 25px 25px 25px 25px;
+    display: none;
 }
 
 .about-product span {
