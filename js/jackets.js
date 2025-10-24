@@ -6,7 +6,8 @@ const apiUrl = "https://v2.api.noroff.dev/rainy-days"
 async function fetchProducts() {
     try {
         const response = await fetch(apiUrl)
-        const products = response.json()
+        const data = await response.json()
+        const products = data.data
 
         products.forEach(product => {
             const display = document.createElement("div")
@@ -18,8 +19,21 @@ async function fetchProducts() {
             image.className = "jacket-image"
             title.className = "about-product"
             price.className = "price"
-        });
+
+            image.src = product.image.url
+            image.alt = product.image.alt
+            title.textContent = product.title
+            price.textContent = product.price
+
+            display.appendChild(title)
+            display.appendChild(price)
+            display.appendChild(image)
+
+            jacketsList.appendChild(display)
+        })
     } catch (error) {
-        console.log("Could not fetch products, try again later", error)
+        console.error("Failed to fetch products", error)
     }
 }
+
+fetchProducts()
