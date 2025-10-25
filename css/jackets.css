@@ -7,6 +7,11 @@
     width: 500px;
     padding-top: 30px;
     border-radius: 10px;
+    transition: 0.5s;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 15px var(--text-color-three);
 }
 
 .jackets-list {
@@ -51,38 +56,22 @@ a {
     text-decoration: none;
 }
 
-/** div img {
-    max-width: 100%;
-    width: 700px;
-    border: 2px solid var(--border-color);
+.logo-bottom-two {
+  display: block;
+  max-width: 100%;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
 }
-
-div img:hover {
-    opacity: 0.5;
-    background-color: var(--text-color-three);
-}
-
-.jacket-selection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
-    justify-content: center;
-    padding: 25px 25px 25px 25px;
-}
-
-.about-product span {
-    color: var(--text-color-three);
-    font-weight: bold;
-    font-size: larger;
-} **/
-
 
 /** Media queries **/
 
-/** @media only screen and (max-width: 1500px) {
-    .about-product {
-        text-align: center;
+ @media only screen and (max-width: 1200px) {
+    .jackets-list {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
     
 }
@@ -91,4 +80,4 @@ div img:hover {
     h2 {
         font-size: 25px;
     }
-} **/
+} 
