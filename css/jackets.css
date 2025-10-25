@@ -1,35 +1,54 @@
 /** The styles for jackets.html **/
 
 .card {
-    background-color: aquamarine;
+    background-color: var(--border-color);
     overflow: hidden;
+    margin-bottom: 100px;
+    width: 500px;
+    padding-top: 30px;
+    border-radius: 10px;
 }
 
 .jackets-list {
     max-width: 1200px;
     padding: 15px;
     display: flex;
-    gap: 50px;
+    gap: 100px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .jacket-image {
     width: 100%;
     max-width: 400px;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    
 }
 
 .about-product {
-    color: var(--text-color-three);
+    color: var(--text-color-two);
     font-weight: bold;
     font-size: 20px;
+    margin-left: 50px;
 }
 
 .price {
-    color: #000000;
+    color: var(--text-color-three);
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 50px;
+    position: relative;
+    bottom: 40px;
+}
+
+a {
+    text-decoration: none;
 }
 
 /** div img {
