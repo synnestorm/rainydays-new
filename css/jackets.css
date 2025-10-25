@@ -1,5 +1,10 @@
 /** The styles for jackets.html **/
 
+.card {
+    background-color: aquamarine;
+    overflow: hidden;
+}
+
 .jackets-list {
     max-width: 1200px;
     margin: 0 auto;
