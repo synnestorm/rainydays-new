@@ -1,64 +1,6 @@
 /** This is the stylesheet for product-details.html **/
 
-.logo {
-    max-width: 100%;
-    width: 450px;
-    display: block;
-    z-index: 2;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 13px;
-    
-}
 
-.product {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-}
-
-.jacket-image {
-    max-width: 100%;
-    height: auto;
-    padding: 50px;
-}
-
-.jacket-info {
-    font-size: 20px;
-    text-align: left;
-    padding-right: 50px;
-}
-
-.price {
-   font-weight: bold;
-   font-size: 35px;
-   color: var(--text-color-three); 
-}
-
-.add-btn {
-    font-size: 15px;
-    background-color: var(--text-color-three);
-    text-decoration: none;
-    color: var(--bg-color);
-    padding: 5px;
-    border-radius: 3px;
-}
-
-.add-btn:hover {
-    background-color: var(--bg-color);
-    color: var(--text-color-three);
-}
-
-.size {
-    font-size: 15px;
-    font-style: oblique;
-}
-
-select {
-    padding: 6px;
-    font-size: 15px;
-}
 
 .logo-bottom-two {
     display: block;
@@ -71,27 +13,3 @@ select {
 
 /** Media queries **/
 
-@media only screen and (max-width: 600px) {
-    .logo {
-        width: 300px;
-        padding-left: 85px;
-        padding-top: 70px;
-    }
-    .product {
-        flex-direction: column;
-    }
-    .jacket-info {
-        padding: 50px;
-    }
-
-}
-
-@media only screen and (max-width: 430px) {
-    body {
-        overflow-x: hidden;
-    }
-    header {
-    min-height: 250px;
-    }
-    
-}
