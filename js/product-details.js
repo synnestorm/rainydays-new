@@ -17,13 +17,29 @@ async function fetchProduct() {
         const product = data.data
 
         const productDiv = document.createElement("div")
+        productDiv.className = "product-details"
+
         const image = document.createElement("img")
+        image.className = "product-image"
+
         const title = document.createElement("h2")
+        title.className = "product-title"
+
         const description = document.createElement("p")
+        description.className = "product-description"
+
         const price = document.createElement("span")
+        price.className = "product-price"
+
         const chooseSize = document.createElement("input")
+        chooseSize.className = "product-size"
+
         const addCart = document.createElement("button")
+        addCart.className = "add-cart"
+
         const backButton = document.createElement("a")
+        backButton.className = "go-back"
+
 
     } catch (error){
 
