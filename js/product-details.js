@@ -40,9 +40,24 @@ async function fetchProduct() {
         const backButton = document.createElement("a")
         backButton.className = "go-back"
 
+        image.src = product.image.url 
+        image.alt = product.image.alt
+        title.textContent = product.title
+        price.textContent = `${product.price}`
+        description.textContent = product.description
+        backButton.textContent = "Back to jackets"
+        backButton.href = "jackets.html"
 
+        productDiv.appendChild(image)
+        productDiv.appendChild(title)
+        productDiv.appendChild(description)
+        productDiv.appendChild(price)
+        productDiv.appendChild(backButton)
+
+        container.appendChild(productDiv)
     } catch (error){
-
+        console.error("Failed to fetch product", error)
+        container.textContent = "Failed to load product"
     }
 }
 
