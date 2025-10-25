@@ -10,12 +10,17 @@ async function fetchProducts() {
         const products = data.data
 
         products.forEach(product => {
-            const display = document.createElement("div")
+            const card = document.createElement("div")
+            card.className = "card"
+
+            const link = document.createElement("a")
+            link.href = `index.html`
+            link.className = "product-link"
+
             const image = document.createElement("img")
             const title = document.createElement("p")
             const price = document.createElement("span")
 
-            display.className = "display"
             image.className = "jacket-image"
             title.className = "about-product"
             price.className = "price"
@@ -25,11 +30,11 @@ async function fetchProducts() {
             title.textContent = product.title
             price.textContent = product.price
 
-            display.appendChild(title)
-            display.appendChild(price)
-            display.appendChild(image)
+            card.appendChild(title)
+            card.appendChild(price)
+            card.appendChild(image)
 
-            jacketsList.appendChild(display)
+            jacketsList.appendChild(card)
         })
     } catch (error) {
         console.error("Failed to fetch products", error)
