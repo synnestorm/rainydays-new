@@ -2,3 +2,11 @@
 
 const jacketDetail = document.querySelector("#jacket-detail")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"
+
+async function fetchProduct() {
+    try {
+
+    } catch {
+        
+    }
+}
