@@ -1,1 +1,0 @@
-// for the shopping cart, checkout process
