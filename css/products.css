@@ -1,6 +1,45 @@
-/** This is the stylesheet for product-details.html **/
+/** This is the stylesheet for product.html **/
 
+.product-details {
 
+}
+.product-image {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.product-title {
+    color: var(--text-color-two);
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 50px;
+}
+.product-description {
+
+}
+
+.product.price {
+    color: var(--text-color-three);
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 50px;
+    position: relative;
+    bottom: 40px;
+}
+
+.product-size {
+
+}
+.add-to-cart {
+
+}
+.go-back {
+
+}
 
 .logo-bottom-two {
     display: block;
@@ -11,5 +50,8 @@
     padding-top: 40px;
 }
 
-/** Media queries **/
+a {
+    text-decoration: none;
+}
 
+/** Media queries **/
