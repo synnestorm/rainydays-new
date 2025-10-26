@@ -44,6 +44,8 @@ async function fetchProduct() {
         image.alt = product.image.alt
         title.textContent = product.title
         price.textContent = `${product.price}`
+        addCart.textContent = "Add to cart"
+        chooseSize.textContent = "Choose size"
         description.textContent = product.description
         backButton.textContent = "Back to jackets"
         backButton.href = "jackets.html"
@@ -52,6 +54,8 @@ async function fetchProduct() {
         productDiv.appendChild(title)
         productDiv.appendChild(description)
         productDiv.appendChild(price)
+        productDiv.appendChild(chooseSize)
+        productDiv.appendChild(addCart)
         productDiv.appendChild(backButton)
 
         container.appendChild(productDiv)
