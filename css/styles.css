@@ -61,6 +61,7 @@ nav a {
   padding-bottom: 10px;
   font-family: var(--font-two), Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
+  transition: 0.3s;
 }
 
 nav a:hover {
