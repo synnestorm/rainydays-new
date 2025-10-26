@@ -13,7 +13,7 @@ async function fetchNewArrivals() {
         const data = await response.json()
         const products = data.data
 
-        const selectedArrivals = products.slice(3, 6)
+        const selectedArrivals = products.slice(4, 7)
 
         newArrivals.innerHTML = "";
 
