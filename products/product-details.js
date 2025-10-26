@@ -31,8 +31,8 @@ async function fetchProduct() {
         const price = document.createElement("span")
         price.className = "product-price"
 
-        const chooseSize = document.createElement("input")
-        chooseSize.className = "product-size"
+   //     const chooseSize = document.createElement("input")
+   //     chooseSize.className = "product-size"
 
         const addCart = document.createElement("button")
         addCart.className = "add-cart"
@@ -45,16 +45,16 @@ async function fetchProduct() {
         title.textContent = product.title
         price.textContent = `${product.price}`
         addCart.textContent = "Add to cart"
-        chooseSize.textContent = "Choose size"
+  //      chooseSize.textContent = "Choose size"
         description.textContent = product.description
-        backButton.textContent = "Back to jackets"
+        backButton.textContent = "Go back"
         backButton.href = "/products/index.html"
 
         productDiv.appendChild(image)
         productDiv.appendChild(title)
         productDiv.appendChild(description)
         productDiv.appendChild(price)
-        productDiv.appendChild(chooseSize)
+  //      productDiv.appendChild(chooseSize)
         productDiv.appendChild(addCart)
         productDiv.appendChild(backButton)
 
