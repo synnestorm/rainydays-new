@@ -21,18 +21,24 @@ async function fetchNewArrivals() {
         const arrivalDiv = document.createElement("div")
         arrivalDiv.className = "product-arrivals"
 
+        const link = document.createElement("a")
+        link.className = "new-arrival-link"
+        link.href = `products/product.html?id=${product.id}`
+
         const image = document.createElement("img")
-        image.className = "product-image"
+        image.className = "new-arrival-image"
         image.src = product.image.url
         image.alt = product.title
 
         const price = document.createElement("span")
-        price.className = "product-price"
+        price.className = "new-arrival-price"
         price.textContent = `${product.price} NOK`
 
-        arrivalDiv.appendChild(image)
+        link.appendChild(image)
+        arrivalDiv.appendChild(link)
         arrivalDiv.appendChild(price)
         newArrivals.appendChild(arrivalDiv)
+        
 })
     } catch (error) {
         console.error("Failed to fetch new arrivals", error)
