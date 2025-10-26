@@ -120,27 +120,29 @@ span {
   font-family: var(--font-two), Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/** product-arrivals, new-arrival-link, new-arrival-image, new-arrival-price **/
+
 .new-arrivals {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-left: 100px;
-  margin-right: 100px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  justify-content: center;
+  gap: 25px;
 }
 
-.new-products {
+.new-arrival-image {
   max-width: 100%;
-  width: 400px;
+  width: 350px;
+  height: 400px;
   border: 3px solid var(--border-color);
+  object-fit: cover;
+  display: block;
 }
 
-.about-product {
+.new-arrival-price {
   text-transform: uppercase;
   font-weight: bold;
-  color: var(--text-color-two);
+  color: var(--text-color-three);
   padding-top: 30px;
   padding-bottom: 20px;
   font-size: 25px;
