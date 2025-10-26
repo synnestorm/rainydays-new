@@ -14,7 +14,7 @@ async function fetchProducts() {
             card.className = "card"
 
             const link = document.createElement("a")
-            link.href = `product-details.html?id=${product.id}`
+            link.href = `product.html?id=${product.id}`
             link.className = "product-link"
 
             const image = document.createElement("img")
