@@ -48,7 +48,7 @@ async function fetchProduct() {
   //      chooseSize.textContent = "Choose size"
         description.textContent = product.description
         backButton.textContent = "Go back"
-        backButton.href = "../products/index.html"
+        backButton.href = "index.html"
 
         productDiv.appendChild(image)
         productDiv.appendChild(title)
