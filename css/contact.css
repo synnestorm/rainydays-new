@@ -2,20 +2,10 @@
 success.html **/
 
 /** Contact page **/
-h1 {
-  font-size: 50px;
-  font-style: italic;
-  background: linear-gradient(#565a60, #4b71ac);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-family: var(--font-one), Verdana, Geneva, Tahoma, sans-serif;
-  padding-top: 15px;
-  text-align: center;
-}
 
 .center {
   margin: auto;
-  width: 28%;
+  width: 55%;
   border: 2px solid transparent;
   padding-bottom: 30px;
 }
@@ -23,6 +13,8 @@ h1 {
 .link {
   text-decoration: underline;
   font-weight: bold;
+  cursor: pointer;
+  color: black;
 }
 
 .contact-form {
@@ -41,30 +33,6 @@ textarea {
 
 textarea:hover {
   box-shadow: 2px 2px 5px rgba(88, 88, 88, 0.94);
-}
-
-button[type="submit"] {
-  background-color: var(--text-color-three);
-  width: 300px;
-  display: block;
-  font-weight: bold;
-  font-family: var(--font-one), Verdana, Geneva, Tahoma, sans-serif;
-  text-decoration: none;
-  font-size: 18px;
-  color: var(--bg-color);
-  margin-top: 10px;
-  padding: 10px;
-  margin: auto;
-  margin-top: 10px;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-}
-
-button[type="submit"]:hover {
-  background-color: var(--bg-color);
-  color: var(--text-color-three);
-  text-decoration: none;
 }
 
 .logo-bottom-two {
@@ -98,6 +66,7 @@ button[type="submit"]:hover {
   margin-bottom: 100px;
   background-color: var(--border-color);
   border-radius: 10px;
+  height: 170px;
 }
 
 /** Success Page **/
