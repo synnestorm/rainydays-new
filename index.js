@@ -34,7 +34,7 @@ function displayNewArrivals() {
     }
 
     const selectedArrivals = products.slice(4, 4 + arrivalsToShow)
-    newArrivals.innerHTML = "";
+    newArrivals.innerHTML = ""
 
         selectedArrivals.forEach(product => {
         const arrivalDiv = document.createElement("div")
@@ -63,4 +63,4 @@ function displayNewArrivals() {
 
 fetchNewArrivals()
 
-window.addEventListener("resize", displayNewArrivals);
+window.addEventListener("resize", displayNewArrivals)

@@ -37,6 +37,25 @@ async function fetchProduct() {
         const addCart = document.createElement("button")
         addCart.className = "add-cart"
 
+        addCart.addEventListener("click", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+    const existingProductIndex = cart.findIndex(item => item.id === product.id)
+    if (existingProductIndex !== -1) {
+        cart[existingProductIndex].quantity += 1;
+    } else { 
+        cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: product.image.url,
+            quantity: 1
+        })
+}
+localStorage.setItem("cart", JSON.stringify(cart))
+console.log(`${product.title} added to cart!`); //remove console.log!!!!!
+})
+
         const backButton = document.createElement("a")
         backButton.className = "go-back"
 
@@ -66,7 +85,3 @@ async function fetchProduct() {
 }
 
 fetchProduct()
-
-function addToCart() {
-    
-}
