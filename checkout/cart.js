@@ -42,9 +42,16 @@ function generateCart() {
         productDisplay.appendChild(removeBtn)
 
         cartContainer.appendChild(productDisplay)
-
-
     })
-
     cartProducts.textContent = `All products: ${total} NOK`
 }
+
+function removeFromCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || []
+    cart.splice(index, 1)
+    localStorage.setItem("cart", JSON.stringify(cart))
+    generateCart()
+}
+
+generateCart()
+
