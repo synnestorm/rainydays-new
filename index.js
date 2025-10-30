@@ -1,7 +1,9 @@
-// for the index page
+
+// fetching "New Arrivals" from noroff API, links to product details
 
 const newArrivals = document.querySelector("#new-arrivals")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"
+let products = []
 
 async function fetchNewArrivals() {
     try {
@@ -11,11 +13,28 @@ async function fetchNewArrivals() {
         }
         
         const data = await response.json()
-        const products = data.data
+        products = data.data
 
-        const selectedArrivals = products.slice(3, 7)
+        displayNewArrivals()
+        
 
-        newArrivals.innerHTML = "";
+    } catch (error) {
+        console.error("Failed to fetch new arrivals", error)
+    }
+}
+
+// when the screen is smaller, the "New Arrivals" will only show 3 products
+
+function displayNewArrivals() {
+    let arrivalsToShow;
+    if (window.innerWidth <= 1475) {
+        arrivalsToShow = 3
+    } else {
+        arrivalsToShow = 4
+    }
+
+    const selectedArrivals = products.slice(4, 4 + arrivalsToShow)
+    newArrivals.innerHTML = "";
 
         selectedArrivals.forEach(product => {
         const arrivalDiv = document.createElement("div")
@@ -38,11 +57,10 @@ async function fetchNewArrivals() {
         arrivalDiv.appendChild(link)
         arrivalDiv.appendChild(price)
         newArrivals.appendChild(arrivalDiv)
-        
+
 })
-    } catch (error) {
-        console.error("Failed to fetch new arrivals", error)
-    }
 }
 
 fetchNewArrivals()
+
+window.addEventListener("resize", displayNewArrivals);

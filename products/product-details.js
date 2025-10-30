@@ -66,3 +66,7 @@ async function fetchProduct() {
 }
 
 fetchProduct()
+
+function addToCart() {
+    
+}
