@@ -6,7 +6,12 @@ let cart = JSON.parse(localStorage.getItem("cart")) || []
 function generateCart() {
     cartContainer.innerHTML = ""
     if(cart.length === 0) {
-        cartContainer.textContent = "Your cart is currently empty:("
+        
+        const emptyCart = document.createElement("p")
+        emptyCart.className = "empty-cart"
+        emptyCart.textContent = "Your cart is currently empty:("
+        
+        cartContainer.appendChild(emptyCart)
         cartProducts.textContent = ""
         return
     }
@@ -38,18 +43,11 @@ function generateCart() {
 
         const removeBtn = document.createElement("button")
         removeBtn.className = "remove-btn"
-        removeBtn.textContent = "Remove products"
-        removeBtn.addEventListener ("click", () => removeFromCart(index))
+        removeBtn.textContent = "Remove product"
+        removeBtn.addEventListener ("click", () => removeFromCart(item.id, item.size))
 
         const productInfo = document.createElement("div")
         productInfo.className = "product-info"
-
-        const continueBtn = document.createElement("button")
-        continueBtn.className = "continue-btn"
-        continueBtn.textContent = "Continue to checkout"
-        continueBtn.addEventListener("click", () => {
-            window.location.href = "checkout.html"
-        })
 
         productDisplay.appendChild(image)
         productDisplay.appendChild(title)
@@ -60,20 +58,32 @@ function generateCart() {
         
         productDisplay.appendChild(productInfo)
         cartContainer.appendChild(productDisplay)
-        cartContainer.appendChild(continueBtn)
     })
-    cartProducts.textContent = `All products: ${total} NOK`
+
+    const totalPrice = document.createElement("div")
+    totalPrice.className = "total-price"
+    totalPrice.textContent = `Total price: ${total} NOK`
+
+    cartContainer.appendChild(totalPrice)
+
+    const continueBtn = document.createElement("button")
+    continueBtn.className = "continue-btn"
+    continueBtn.textContent = "Continue to checkout"
+    continueBtn.addEventListener("click", () => {
+        localStorage.removeItem("cart")
+        window.location.href = "checkout.html"
+        })
+
+    cartContainer.appendChild(continueBtn)
+
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1)
+
+
+function removeFromCart(productId, size) {
+    cart = cart.filter(item => !(item.id === productId && item.size === size))
     localStorage.setItem("cart", JSON.stringify(cart))
     generateCart()
 }
 
 generateCart()
-
-document.querySelector("#checkout-btn").addEventListener("click", () => {
-    localStorage.removeItem("cart")
-    window.location.href = "confirmation/index.html"
-})
