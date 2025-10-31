@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const price = document.createElement("p")
         price.className = "product-price"
-        price.textContent = `Total price: ${item.price} NOK`
+        price.textContent = `Price: ${item.price} NOK`
 
         itemDisplay.appendChild(image)
         itemDisplay.appendChild(title)

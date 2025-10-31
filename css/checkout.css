@@ -8,16 +8,36 @@ main {
     justify-content: space-evenly;
     gap: 20px;
 }
+.item-display {
+    border: 2px solid var(--border-color);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    margin-bottom: 20px;
+}
 p.order-summary {
     font-family: var(--font-one);
     font-size: 25px;
     color: var(--text-color-three);
     font-weight: bold;
+    margin-bottom: 10px;
 }
 p {
     font-family: var(--font-one);
     font-size: 17px;
     color: var(--text-color-three);
+    margin-bottom: -5px;
+}
+
+.product-price {
+    margin-bottom: 20px;
+}
+
+span {
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 180px;
 }
 
 .product-image {
@@ -25,6 +45,7 @@ p {
     height: auto;
     object-fit: cover;
     display: inline;
+    margin-top: 30px;
 }
 
 .checkout-form {
@@ -52,6 +73,13 @@ p {
     text-decoration: none;
     font-weight: bold;
     text-align: center;
+    transition: 0.3s;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .checkout-btn:hover {
