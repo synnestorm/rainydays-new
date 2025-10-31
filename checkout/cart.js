@@ -7,7 +7,7 @@ function generateCart() {
     cartContainer.innerHTML = ""
     if(cart.length === 0) {
         cartContainer.textContent = "Your cart is currently empty:("
-        cartProducts = ""
+        cartProducts.textContent = ""
         return
     }
 
@@ -19,13 +19,14 @@ function generateCart() {
         const productDisplay = document.createElement("div")
         productDisplay.className = "product-display"
 
-        const image = document.createElemenet("img")
+        const image = document.createElement("img")
         image.className = "product-image"
         image.src = item.image
         image.alt = item.title
 
         const title = document.createElement("h2")
         title.className = "product-title"
+        title.textContent = item.title
 
         const price = document.createElement("span")
         price.className = "product-price"
@@ -36,7 +37,12 @@ function generateCart() {
         removeBtn.textContent = "Remove products"
         removeBtn.addEventListener ("click", () => removeFromCart(index))
 
-        productDisplay.appendChild(img)
+        //  const continueBtn = document.createElement("button")
+        // continueBtn.className = "continue-btn"
+        // continueBtn.textContent = "Continue to purchase"
+        // continueBtn.src = 
+
+        productDisplay.appendChild(image)
         productDisplay.appendChild(title)
         productDisplay.appendChild(price)
         productDisplay.appendChild(removeBtn)
@@ -46,8 +52,7 @@ function generateCart() {
     cartProducts.textContent = `All products: ${total} NOK`
 }
 
-function removeFromCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || []
+function removeFromCart(index) {
     cart.splice(index, 1)
     localStorage.setItem("cart", JSON.stringify(cart))
     generateCart()
@@ -55,3 +60,7 @@ function removeFromCart() {
 
 generateCart()
 
+document.querySelector("#checkout-btn").addEventListener("click", () => {
+    localStorage.removeItem("cart")
+    window.location.href = "confirmation/index.html"
+})

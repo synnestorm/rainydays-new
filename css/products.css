@@ -99,4 +99,13 @@ a {
     text-decoration: none;
 }
 
+.added-message {
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color-three);
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
+
 /** Media queries **/

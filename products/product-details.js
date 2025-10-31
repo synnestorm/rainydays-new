@@ -53,7 +53,20 @@ async function fetchProduct() {
         })
 }
 localStorage.setItem("cart", JSON.stringify(cart))
-console.log(`${product.title} added to cart!`); //remove console.log!!!!!
+let message = productDiv.querySelector(".added-message")
+
+    if (!message) {
+        message = document.createElement("p")
+        message.className = "added-message"
+        message.textContent = "Added to cart!"
+        productDiv.appendChild(message)
+    }
+
+    message.style.display = "block"
+
+    setTimeout(() => {
+       message.style.display = "none"
+    }, 3000)
 })
 
         const backButton = document.createElement("a")

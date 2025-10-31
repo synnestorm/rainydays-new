@@ -1,6 +1,8 @@
 /** Stylesheet for shoppingcart.html **/
+/** cart, cart-products **/
+/** product-display, product-image, product-title, product-price, remove-btn **/
 
-.shoppingcart {
+.cart-products {
     margin-top: 100px;
     margin-bottom: 100px;
     margin-left: auto;
@@ -11,20 +13,7 @@
     border-radius: 10%;
 }
 
-main .fa-bag-shopping {
-    font-size: 150px;
-    padding-top: 10px;
-}
-
-.empty {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: var(--text-color-three);
-    padding-bottom: 50px;
-}
-
-.continue-btn {
+.remove-btn {
     padding: 10px;
     background-color: var(--text-color-three);
     text-align: center;
@@ -33,7 +22,7 @@ main .fa-bag-shopping {
     margin-left: 317px;
 }
 
-.continue-btn:hover {
+.remove-btn:hover {
     background-color: var(--bg-color);
     color: var(--text-color-three);
 }
