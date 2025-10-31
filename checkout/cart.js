@@ -62,7 +62,7 @@ function generateCart() {
 
     const totalPrice = document.createElement("div")
     totalPrice.className = "total-price"
-    totalPrice.textContent = `Total price: ${total} NOK`
+    totalPrice.textContent = `Total price: ${total.toFixed(2)} NOK`
 
     cartContainer.appendChild(totalPrice)
 
