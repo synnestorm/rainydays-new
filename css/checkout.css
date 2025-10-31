@@ -1,11 +1,39 @@
 /** Stylesheet for checkout.html page **/
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+p.order-summary {
+    font-family: var(--font-one);
+    font-size: 25px;
+    color: var(--text-color-three);
+    font-weight: bold;
+}
+p {
+    font-family: var(--font-one);
+    font-size: 17px;
+    color: var(--text-color-three);
+}
+
+.product-image {
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    display: inline;
+}
 
 .checkout-form {
     background-color: var(--border-color);
     padding: 30px;
-    margin: auto;
     padding-bottom: 40px;
     margin-bottom: 20px;
+    border-radius: 5px;
+    width: 500px;
 }
 
 .p-checkout {

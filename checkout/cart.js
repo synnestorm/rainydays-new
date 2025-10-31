@@ -70,7 +70,6 @@ function generateCart() {
     continueBtn.className = "continue-btn"
     continueBtn.textContent = "Continue to checkout"
     continueBtn.addEventListener("click", () => {
-        localStorage.removeItem("cart")
         window.location.href = "checkout.html"
         })
 
