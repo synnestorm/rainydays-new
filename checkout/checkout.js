@@ -1,3 +1,5 @@
+// using localStorage to show summary of products chosen to buy
+// checkout button to confirmation/index.html; to the success page
 document.addEventListener("DOMContentLoaded", () => {
     const cartItems = document.getElementById("cart-items")
     const totalPrice = document.getElementById("total-price")

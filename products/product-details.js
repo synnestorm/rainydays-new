@@ -1,15 +1,16 @@
-// for the induvidual jacket pages; displaying details about different jackets
+
+// for the more detailed jacket page.
+// shows the jacket you clicked on; with the ability to choose size, add to cart and go back
 
 const container = document.querySelector("#container")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"
 
+// loading indicator, styled in products.css
 const loader = document.createElement("div")
 loader.id = "loader"
 loader.className = "loader"
 loader.style.display = "none"
 document.body.appendChild(loader)
-
-
 
 async function fetchProduct() {
     loader.style.display = "flex"
@@ -55,7 +56,7 @@ async function fetchProduct() {
 
         const addCart = document.createElement("button")
         addCart.className = "add-cart"
-
+// using localStorage to add product to the shopping cart
         addCart.addEventListener("click", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
 

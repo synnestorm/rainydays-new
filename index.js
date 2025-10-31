@@ -1,5 +1,5 @@
 
-// fetching "New Arrivals" from noroff API, links to product details
+// fetching "New Arrivals" from noroff API, links to products/product.html
 
 const newArrivals = document.querySelector("#new-arrivals")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"

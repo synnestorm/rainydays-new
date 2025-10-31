@@ -1,7 +1,10 @@
-// for the jackets pages
+
+// fetching all products from the API, listing all the products
 
 const jacketsList = document.querySelector("#jackets-list")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"
+
+// loading indicator, styled in jackets.css
 
 const loader = document.createElement("div")
 loader.id = "loader"
