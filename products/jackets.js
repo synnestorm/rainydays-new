@@ -3,7 +3,15 @@
 const jacketsList = document.querySelector("#jackets-list")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"
 
+const loader = document.createElement("div")
+loader.id = "loader"
+loader.className = "loader"
+loader.style.display = "none"
+document.body.appendChild(loader)
+
 async function fetchProducts() {
+    loader.style.display = "flex"
+    await new Promise(r => setTimeout(r, 1000));
     try {
         const response = await fetch(apiUrl)
         const data = await response.json()
@@ -41,6 +49,8 @@ async function fetchProducts() {
         })
     } catch (error) {
         console.error("Failed to fetch products", error)
+    } finally {
+        loader.style.display = "none" 
     }
 }
 

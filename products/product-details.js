@@ -3,7 +3,17 @@
 const container = document.querySelector("#container")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"
 
+const loader = document.createElement("div")
+loader.id = "loader"
+loader.className = "loader"
+loader.style.display = "none"
+document.body.appendChild(loader)
+
+
+
 async function fetchProduct() {
+    loader.style.display = "flex"
+    await new Promise(r => setTimeout(r, 1000));
     try {
         const params = new URLSearchParams(window.location.search)
         const id = params.get("id")
@@ -105,6 +115,8 @@ let message = productDiv.querySelector(".added-message")
     } catch (error){
         console.error("Failed to fetch product", error)
         container.textContent = "Failed to load product"
+    } finally {
+        loader.style.display = "none" 
     }
 }
 
