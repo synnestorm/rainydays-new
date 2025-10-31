@@ -32,6 +32,10 @@ function generateCart() {
         price.className = "product-price"
         price.textContent = `${item.price} NOK`
 
+        const size = document.createElement("span")
+        size.className = "product-size"
+        size.textContent = `Size: ${item.size}`
+
         const removeBtn = document.createElement("button")
         removeBtn.className = "remove-btn"
         removeBtn.textContent = "Remove products"
@@ -40,19 +44,23 @@ function generateCart() {
         const productInfo = document.createElement("div")
         productInfo.className = "product-info"
 
-        //  const continueBtn = document.createElement("button")
-        // continueBtn.className = "continue-btn"
-        // continueBtn.textContent = "Continue to purchase"
-        // continueBtn.src = 
+        const continueBtn = document.createElement("button")
+        continueBtn.className = "continue-btn"
+        continueBtn.textContent = "Continue to checkout"
+        continueBtn.addEventListener("click", () => {
+            window.location.href = "checkout.html"
+        })
 
         productDisplay.appendChild(image)
         productDisplay.appendChild(title)
         productDisplay.appendChild(price)
+        productDisplay.appendChild(size)
         
         productDisplay.appendChild(removeBtn)
         
         productDisplay.appendChild(productInfo)
         cartContainer.appendChild(productDisplay)
+        cartContainer.appendChild(continueBtn)
     })
     cartProducts.textContent = `All products: ${total} NOK`
 }

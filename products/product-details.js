@@ -31,8 +31,17 @@ async function fetchProduct() {
         const price = document.createElement("span")
         price.className = "product-price"
 
-   //     const chooseSize = document.createElement("input")
-   //     chooseSize.className = "product-size"
+        const chooseSize = document.createElement("select")
+        chooseSize.className = "select-size"
+        chooseSize.id = "size"
+
+        product.sizes.forEach(size => {
+            const option = document.createElement("option")
+            option.value = size
+            option.textContent = size
+            chooseSize.appendChild(option)
+
+        })
 
         const addCart = document.createElement("button")
         addCart.className = "add-cart"
@@ -40,7 +49,8 @@ async function fetchProduct() {
         addCart.addEventListener("click", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
 
-    const existingProductIndex = cart.findIndex(item => item.id === product.id)
+    const selectedSize = chooseSize.value
+    const existingProductIndex = cart.findIndex(item => item.id === product.id && item.size === selectedSize)
     if (existingProductIndex !== -1) {
         cart[existingProductIndex].quantity += 1;
     } else { 
@@ -49,8 +59,10 @@ async function fetchProduct() {
             title: product.title,
             price: product.price,
             image: product.image.url,
-            quantity: 1
+            quantity: 1,
+            size: selectedSize
         })
+
 }
 localStorage.setItem("cart", JSON.stringify(cart))
 let message = productDiv.querySelector(".added-message")
@@ -77,7 +89,6 @@ let message = productDiv.querySelector(".added-message")
         title.textContent = product.title
         price.textContent = `${product.price}`
         addCart.textContent = "Add to cart"
-  //      chooseSize.textContent = "Choose size"
         description.textContent = product.description
         backButton.textContent = "Go back"
         backButton.href = "../products/index.html"
@@ -86,7 +97,7 @@ let message = productDiv.querySelector(".added-message")
         productDiv.appendChild(title)
         productDiv.appendChild(description)
         productDiv.appendChild(price)
-  //      productDiv.appendChild(chooseSize)
+        productDiv.appendChild(chooseSize)
         productDiv.appendChild(addCart)
         productDiv.appendChild(backButton)
 
