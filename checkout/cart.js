@@ -24,7 +24,7 @@ function generateCart() {
         image.src = item.image
         image.alt = item.title
 
-        const title = document.createElement("h2")
+        const title = document.createElement("p")
         title.className = "product-title"
         title.textContent = item.title
 
@@ -37,6 +37,9 @@ function generateCart() {
         removeBtn.textContent = "Remove products"
         removeBtn.addEventListener ("click", () => removeFromCart(index))
 
+        const productInfo = document.createElement("div")
+        productInfo.className = "product-info"
+
         //  const continueBtn = document.createElement("button")
         // continueBtn.className = "continue-btn"
         // continueBtn.textContent = "Continue to purchase"
@@ -45,8 +48,10 @@ function generateCart() {
         productDisplay.appendChild(image)
         productDisplay.appendChild(title)
         productDisplay.appendChild(price)
+        
         productDisplay.appendChild(removeBtn)
-
+        
+        productDisplay.appendChild(productInfo)
         cartContainer.appendChild(productDisplay)
     })
     cartProducts.textContent = `All products: ${total} NOK`
