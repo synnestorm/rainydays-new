@@ -34,6 +34,7 @@ async function fetchProducts() {
 
 function displayProducts(products) {
     jacketsList.innerHTML = ""
+    jacketsList.classList.remove("show")
     if (products.length === 0) {
         jacketsList.innerHTML = "<p>No jackets in this category is found.</p>"
         return
@@ -67,6 +68,9 @@ function displayProducts(products) {
             link.appendChild(card)
             jacketsList.appendChild(link)
     })
+    setTimeout(() => {
+        jacketsList.classList.add("show");
+    }, 50)
 }
 
 filterButtons.forEach (button => {

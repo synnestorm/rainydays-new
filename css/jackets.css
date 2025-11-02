@@ -50,6 +50,12 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+}
+
+.jackets-list.show {
+    transform: translateY(0);
 }
 
 .jacket-image {
