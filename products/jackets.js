@@ -13,16 +13,34 @@ loader.className = "loader"
 loader.style.display = "none"
 document.body.appendChild(loader)
 
+let allProducts = []
+
 async function fetchProducts() {
     loader.style.display = "flex"
     await new Promise(r => setTimeout(r, 1000));
     try {
         const response = await fetch(apiUrl)
         const data = await response.json()
-        const products = data.data
+        const allProducts = data.data
+        displayProducts(allProducts)
 
-        products.forEach(product => {
-            const card = document.createElement("div")
+    } catch (error) {
+        jacketsList.innerHTML = "<p class='error'>Could not load products. Please try again later</p>"
+        console.error("Failed to fetch products", error)
+    } finally {
+        loader.style.display = "none" 
+    }
+}
+
+function displayProducts() {
+    jacketsList.innerHTML = ""
+    if (products.length === 0) {
+        jacketsList.innerHTML = "<p>No jackets in this category is found.</p>"
+        return
+    }
+
+    products.forEach(product => {
+        const card = document.createElement("div")
             card.className = "card"
 
             const link = document.createElement("a")
@@ -47,15 +65,8 @@ async function fetchProducts() {
             card.appendChild(price)
 
             link.appendChild(card)
-            
-
             jacketsList.appendChild(link)
-        })
-    } catch (error) {
-        console.error("Failed to fetch products", error)
-    } finally {
-        loader.style.display = "none" 
-    }
+    })
 }
 
 fetchProducts()
