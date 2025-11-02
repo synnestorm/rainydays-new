@@ -3,6 +3,7 @@
 
 const jacketsList = document.querySelector("#jackets-list")
 const apiUrl = "https://v2.api.noroff.dev/rainy-days"
+const filterButtons = document.querySelectorAll(".filter-btn")
 
 // loading indicator, styled in jackets.css
 
