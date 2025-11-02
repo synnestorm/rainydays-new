@@ -21,7 +21,7 @@ async function fetchProducts() {
     try {
         const response = await fetch(apiUrl)
         const data = await response.json()
-        const allProducts = data.data
+        allProducts = data.data
         displayProducts(allProducts)
 
     } catch (error) {
@@ -32,7 +32,7 @@ async function fetchProducts() {
     }
 }
 
-function displayProducts() {
+function displayProducts(products) {
     jacketsList.innerHTML = ""
     if (products.length === 0) {
         jacketsList.innerHTML = "<p>No jackets in this category is found.</p>"
@@ -68,5 +68,20 @@ function displayProducts() {
             jacketsList.appendChild(link)
     })
 }
+
+filterButtons.forEach (button => {
+    button.addEventListener ("click", () => {
+        const gender = button.dataset.gender
+
+        if (gender === "all") {
+            displayProducts(allProducts)
+        } else {
+            const filtered = allProducts.filter(
+                p => p.gender && p.gender.toLowerCase() === gender
+            )
+            displayProducts(filtered)
+        }
+    })
+})
 
 fetchProducts()
