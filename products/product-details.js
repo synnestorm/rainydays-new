@@ -24,6 +24,9 @@ async function fetchProduct() {
             return
         }
         const response = await fetch(`${apiUrl}/${id}`)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
         const data = await response.json()
         const product = data.data
 
@@ -56,7 +59,9 @@ async function fetchProduct() {
 
         const addCart = document.createElement("button")
         addCart.className = "add-cart"
+
 // using localStorage to add product to the shopping cart
+
         addCart.addEventListener("click", () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || []
 
@@ -115,7 +120,7 @@ let message = productDiv.querySelector(".added-message")
         container.appendChild(productDiv)
     } catch (error){
         console.error("Failed to fetch product", error)
-        container.textContent = "Failed to load product"
+        container.textContent = "Could not load product. Please try again later."
     } finally {
         loader.style.display = "none" 
     }

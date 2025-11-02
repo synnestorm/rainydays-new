@@ -2,7 +2,15 @@
 // using localStorage to add and remove products; with continue button to checkout.html
 const cartContainer = document.querySelector("#cart")
 const cartProducts = document.querySelector(".cart-products")
-let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+let cart = []
+try {
+    cart = JSON.parse(localStorage.getItem("cart")) || []
+} catch(error) {
+    console.error("Could not load cart from localStorage", error)
+    cart = []
+}
+
 
 function generateCart() {
     cartContainer.innerHTML = ""

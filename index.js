@@ -20,12 +20,18 @@ async function fetchNewArrivals() {
 
     } catch (error) {
         console.error("Failed to fetch new arrivals", error)
+        newArrivals.textContent = "Could not fetch new arrivals. Please try again later."
     }
 }
 
 // when the screen is smaller, the "New Arrivals" will only show 3 products
 
 function displayNewArrivals() {
+    if (!products || products.length === 0) {
+        newArrivals.textContent = "No new arrivals to show."
+        return
+    }
+
     let arrivalsToShow;
     if (window.innerWidth <= 1475) {
         arrivalsToShow = 3
@@ -33,7 +39,7 @@ function displayNewArrivals() {
         arrivalsToShow = 4
     }
 
-    const selectedArrivals = products.slice(4, 4 + arrivalsToShow)
+    const selectedArrivals = products.slice(-arrivalsToShow)
     newArrivals.innerHTML = ""
 
         selectedArrivals.forEach(product => {
@@ -58,7 +64,7 @@ function displayNewArrivals() {
         arrivalDiv.appendChild(price)
         newArrivals.appendChild(arrivalDiv)
 
-})
+    })
 }
 
 fetchNewArrivals()

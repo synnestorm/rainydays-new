@@ -4,7 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const cartItems = document.getElementById("cart-items")
     const totalPrice = document.getElementById("total-price")
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || []
+    let cart = []
+    try {
+        cart = JSON.parse(localStorage.getItem("cart")) || []
+    } catch(error) {
+        console.error("Could not load cart from localStorage", error)
+        cart = []
+    }
+
     let total = 0
 
     cart.forEach(item => {
