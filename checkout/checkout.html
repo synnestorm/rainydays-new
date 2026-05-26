@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is the checkout page for rainydays. Please add your information to continue the checkout process">
+    <meta name="description"
+        content="This is the checkout page for rainydays. Please add your information to continue the checkout process">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Roboto&display=swap"
+        rel="stylesheet">
 
-<link rel="icon" type="image/png" href="../assets/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-<link rel="shortcut icon" href="../assets/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
-<link rel="manifest" href="../assets/site.webmanifest">
-<script src="https://kit.fontawesome.com/3c3001c8de.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/favicon/site.webmanifest">
+    <script src="https://kit.fontawesome.com/3c3001c8de.js" crossorigin="anonymous"></script>
     <link href="../css/styles.css" rel="stylesheet">
     <link href="../css/checkout.css" rel="stylesheet">
     <title>RainyDays | Checkout</title>
@@ -30,9 +34,12 @@
                 <li><a href="../about/index.html" id="about">About</a></li>
                 <li><a href="../products/index.html" id="jackets">Jackets</a></li>
                 <li><a href="../contact/index.html" id="contact">Contact</a></li>
-                <li class="nav-right"><a href="../search/index.html" aria-label="Search here"><i class="fas fa-magnifying-glass"></i></a></li>
-                <li class="nav-right" id="login"><a href="../user/index.html" aria-label="Log in here"><i class="fas fa-user"></i></a></li>
-                <li class="nav-right" id="shoppingbag"><a href="../checkout/index.html" aria-label="Your shopping cart"><i class="fas fa-bag-shopping"></i></a></li>
+                <li class="nav-right"><a href="../search/index.html" aria-label="Search here"><i
+                            class="fas fa-magnifying-glass"></i></a></li>
+                <li class="nav-right" id="login"><a href="../user/index.html" aria-label="Log in here"><i
+                            class="fas fa-user"></i></a></li>
+                <li class="nav-right" id="shoppingbag"><a href="../checkout/index.html"
+                        aria-label="Your shopping cart"><i class="fas fa-bag-shopping"></i></a></li>
             </ul>
         </nav>
 
@@ -40,7 +47,7 @@
     <h1>Checkout</h1>
     <main>
 
-        
+
         <div class="checkout-summary">
             <p class="order-summary">Order Summary:</h2>
             <div id="cart-items"></div>
@@ -69,22 +76,23 @@
                 <input type="password" id="cvc" name="cvc" required maxlength="3">
                 <label for="name-two">Card Name:</label>
                 <input type="text" id="name-two" name="name-two" required placeholder="Name on the card">
-            
+
                 <button class="checkout-btn">Confirm Order</button>
 
             </fieldset>
         </form>
-        
+
     </main>
 
     <footer>
         <img src="../images/RainyDays_Logo.png" alt="Logo" class="logo-bottom-two">
 
-       
+
 
 
 
     </footer>
-<script src="checkout.js"></script>    
+    <script src="checkout.js"></script>
 </body>
+
 </html>
