@@ -29,7 +29,7 @@ body {
 
 header,
 footer {
-  background-image: url("../images/header-background-min1.jpg");
+  background-image: url("../assets/images/header-background-min1.jpg");
   min-height: 250px;
   background-size: cover;
   background-repeat: no-repeat;
