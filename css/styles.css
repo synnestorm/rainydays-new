@@ -84,8 +84,11 @@ nav ul {
   border-top: 3px solid var(--border-color);
   border-bottom: 3px solid var(--border-color);
   position: absolute;
+  width: 100%;
+  max-width: 1920px;
   top: 115px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   right: 0;
 }
 
@@ -142,7 +145,6 @@ span {
 
 .new-arrival-image:hover {
   box-shadow: 2px 2px 15px var(--border-color);
-
 }
 
 .new-arrival-price {
@@ -286,7 +288,7 @@ button[type="submit"]:hover {
     background: var(--text-color-three);
     position: absolute;
     top: -295px;
-    left: 0px;
+    left: 50px;
     width: 120px;
     height: 258px;
   }
