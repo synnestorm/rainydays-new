@@ -1,97 +1,93 @@
-
 // using localStorage to add and remove products; with continue button to checkout.html
-const cartContainer = document.querySelector("#cart")
-const cartProducts = document.querySelector(".cart-products")
+const cartContainer = document.querySelector("#cart");
+const cartProducts = document.querySelector(".cart-products");
 
-let cart = []
+let cart = [];
 try {
-    cart = JSON.parse(localStorage.getItem("cart")) || []
-} catch(error) {
-    console.error("Could not load cart from localStorage", error)
-    cart = []
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+} catch (error) {
+  console.error("Could not load cart from localStorage", error);
+  cart = [];
 }
-
 
 function generateCart() {
-    cartContainer.innerHTML = ""
-    if(cart.length === 0) {
-        
-        const emptyCart = document.createElement("p")
-        emptyCart.className = "empty-cart"
-        emptyCart.textContent = "Your cart is currently empty:("
-        
-        cartContainer.appendChild(emptyCart)
-        cartProducts.textContent = ""
-        return
-    }
+  cartContainer.innerHTML = "";
+  if (cart.length === 0) {
+    const emptyCart = document.createElement("p");
+    emptyCart.className = "empty-cart";
+    emptyCart.textContent = "Your cart is currently empty:(";
 
-    let total = 0
+    cartContainer.appendChild(emptyCart);
+    cartProducts.textContent = "";
+    return;
+  }
 
-    cart.forEach((item, index) => {
-        total += item.price * item.quantity
+  let total = 0;
 
-        const productDisplay = document.createElement("div")
-        productDisplay.className = "product-display"
+  cart.forEach((item, index) => {
+    total += item.price * item.quantity;
 
-        const image = document.createElement("img")
-        image.className = "product-image"
-        image.src = item.image
-        image.alt = item.title
+    const productDisplay = document.createElement("div");
+    productDisplay.className = "product-display";
 
-        const title = document.createElement("p")
-        title.className = "product-title"
-        title.textContent = item.title
+    const image = document.createElement("img");
+    image.className = "product-image";
+    image.src = item.image;
+    image.alt = item.title;
 
-        const price = document.createElement("span")
-        price.className = "product-price"
-        price.textContent = `${item.price} NOK`
+    const title = document.createElement("p");
+    title.className = "product-title";
+    title.textContent = item.title;
 
-        const size = document.createElement("span")
-        size.className = "product-size"
-        size.textContent = `Size: ${item.size}`
+    const price = document.createElement("span");
+    price.className = "product-price";
+    price.textContent = `${item.price} NOK`;
 
-        const removeBtn = document.createElement("button")
-        removeBtn.className = "remove-btn"
-        removeBtn.textContent = "Remove product"
-        removeBtn.addEventListener ("click", () => removeFromCart(item.id, item.size))
+    const size = document.createElement("span");
+    size.className = "product-size";
+    size.textContent = `Size: ${item.size}`;
 
-        const productInfo = document.createElement("div")
-        productInfo.className = "product-info"
+    const removeBtn = document.createElement("button");
+    removeBtn.className = "remove-btn";
+    removeBtn.textContent = "Remove product";
+    removeBtn.addEventListener("click", () =>
+      removeFromCart(item.id, item.size),
+    );
 
-        productDisplay.appendChild(image)
-        productDisplay.appendChild(title)
-        productDisplay.appendChild(price)
-        productDisplay.appendChild(size)
-        
-        productDisplay.appendChild(removeBtn)
-        
-        productDisplay.appendChild(productInfo)
-        cartContainer.appendChild(productDisplay)
-    })
+    const productInfo = document.createElement("div");
+    productInfo.className = "product-info";
 
-    const totalPrice = document.createElement("div")
-    totalPrice.className = "total-price"
-    totalPrice.textContent = `Total price: ${total.toFixed(2)} NOK`
+    productDisplay.appendChild(image);
+    productDisplay.appendChild(title);
+    productDisplay.appendChild(price);
+    productDisplay.appendChild(size);
 
-    cartContainer.appendChild(totalPrice)
+    productDisplay.appendChild(removeBtn);
 
-    const continueBtn = document.createElement("button")
-    continueBtn.className = "continue-btn"
-    continueBtn.textContent = "Continue to checkout"
-    continueBtn.addEventListener("click", () => {
-        window.location.href = "checkout.html"
-        })
+    productDisplay.appendChild(productInfo);
+    cartContainer.appendChild(productDisplay);
+  });
 
-    cartContainer.appendChild(continueBtn)
+  const totalPrice = document.createElement("div");
+  totalPrice.className = "total-price";
+  totalPrice.textContent = `Total price: ${total.toFixed(2)} NOK`;
 
+  cartContainer.appendChild(totalPrice);
+
+  const continueBtn = document.createElement("button");
+  continueBtn.className = "continue-btn";
+  continueBtn.textContent = "Continue to checkout";
+  continueBtn.addEventListener("click", () => {
+    window.location.href = "../checkout/index.html";
+  });
+
+  cartContainer.appendChild(continueBtn);
 }
-
-
 
 function removeFromCart(productId, size) {
-    cart = cart.filter(item => !(item.id === productId && item.size === size))
-    localStorage.setItem("cart", JSON.stringify(cart))
-    generateCart()
+  cart = cart.filter((item) => !(item.id === productId && item.size === size));
+  localStorage.setItem("cart", JSON.stringify(cart));
+  generateCart();
 }
 
-generateCart()
+generateCart();
